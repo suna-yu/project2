@@ -1,0 +1,16 @@
+//  전역변수 선언 
+$prime: #FFF300;
+$second: #FFFDEB;
+$accent1: #D4243B;
+$accent2: #E30613;
+$accent3: #0A309E;
+$col: 112px;
+$gu: 12px;
+$unit: $col + $gu;
+$row: 2.8rem;
+
+// 반응형 
+$mobile: 800px;
+$breakpoint: (
+    'mob': (max-width: $mobile),
+)

@@ -1,0 +1,331 @@
+@charset "UTF-8";
+/* 레이아웃 */
+@import url(./fonts.css);
+/* @import url(./all.min.css); */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* custom */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.75;
+  font-family: "NanumBarunGothic", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  font-family: "ottogi", sans-serif;
+  font-size: 1.6rem;
+}
+
+body {
+  font-family: "ottogi", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+/* ====================================
+    ======= global classes ======
+==================================== */
+.h1,
+h1 {
+  font-size: 4.9rem;
+  font-weight: 700;
+}
+
+.h2,
+h2 {
+  font-size: 3.9rem;
+  font-weight: 700;
+}
+
+.h3,
+h3 {
+  font-size: 3.1rem;
+  font-weight: 500;
+}
+
+.h4, h4 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.h5, h5 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.h6, h6 {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.text {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.link {
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-decoration: underline;
+  color: #0A309E;
+}
+
+.df {
+  display: flex;
+}
+
+.pr {
+  position: relative;
+}
+
+.pa {
+  position: absolute;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1476px;
+  margin: auto;
+}
+
+.division {
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  z-index: 999;
+}
+
+@media screen and (min-width: 800px) {
+  .main_visual {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+}
+.main_visual {
+  height: 100vh;
+}
+
+.about {
+  width: 100%;
+  height: 252rem;
+}
+.global {
+  width: 100%;
+  height: 126rem;
+  background-color: lightcoral;
+}
+@media (max-width: 800px) {
+  .global {
+    background-color: coral;
+  }
+}
+
+.vision {
+  width: 100%;
+  height: 126rem;
+  background-color: lightgreen;
+}
+/* 스킵메뉴 */
+.skip_menu {
+  left: 0;
+  top: 0;
+  padding: 10px 15px;
+  width: 150px;
+  margin-top: -20px;
+}
+
+.skip_menu a {
+  position: absolute;
+  text-decoration: none;
+  color: white;
+  background-color: #000;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transform: translateY(-200%);
+  transition: all 0.3s;
+  text-align: center;
+  padding: 1rem;
+}
+
+.skip_menu a:focus {
+  transform: translateY(0);
+}
+
+/* 팝업창 */
+.popup {
+  position: fixed;
+  width: min(50%, 500px);
+  padding: 2% 2% 5%;
+  font-size: 1.8rem;
+  line-height: 1.75;
+  background-color: white;
+  z-index: 999;
+  left: 50%;
+  top: 50px;
+  transform: translateX(-50%);
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.4);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  border-radius: 10px;
+}
+
+.popup .close {
+  position: absolute;
+  background-color: #333;
+  padding: 0.5% 3%;
+  right: 10%;
+  bottom: 10%;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* ====================================
+    ======= header = nav ======    
+==================================== */
+header::before {
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 100%);
+  position: absolute;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+header nav img {
+  width: 50px;
+  height: 50px;
+}
+
+header a {
+  display: block;
+  color: white;
+}
+
+/* ====================================
+    ======= main_visual ======    
+==================================== */
+.main_visual img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
+}
+
+/* ====================================
+    ======= about ======    
+==================================== */
+.about .inner > h2 {
+  margin-top: 25.2rem;
+  text-align: center;
+}
+.about .cont {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+.about .item1 {
+  top: 14rem;
+  height: 56rem;
+}
+.about .item1 img {
+  left: 124px;
+  width: 484px;
+  height: 56rem;
+  border-radius: 30%;
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about .item1 .box {
+  right: 124px;
+  position: absolute;
+}
+.about .item2 {
+  top: 19.6rem;
+  height: 56rem;
+}
+.about .item2 .box {
+  position: relative;
+  left: 124px;
+}
+.about .item2 img {
+  width: 496px;
+  height: 496px;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  right: 124px;
+}
+.about .item3 {
+  top: 19.6rem;
+  height: 56rem;
+}
+.about .item3 img {
+  left: 124px;
+  width: 496px;
+  height: 496px;
+  border-radius: 50%;
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about .item3 .box {
+  right: 124px;
+  position: absolute;
+}/*# sourceMappingURL=partial.css.map */

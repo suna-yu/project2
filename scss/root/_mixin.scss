@@ -1,0 +1,8 @@
+// 모바일 반응형 
+@mixin responsive($mode) {
+    $query: map-get($breakpoint, $mode);
+    $max-width: map-get($query, max-width);
+    @media (max-width: #{$max-width}) {
+        @content;
+    }
+}

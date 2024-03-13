@@ -51,12 +51,12 @@
 /* ====================================
     ======= header = nav ======    
 ==================================== */
-header {
+/* header {
     width: 100%; 
     height: 50px;
     position: absolute;
     z-index: 999;
-}
+} */
 header::before {
     content: '';
     display: block;
@@ -75,21 +75,18 @@ header nav img {
     height: 50px;
 } 
 header a {display: block; color: white;}
-header ul li {
-    
-}
 
 /* ====================================
     ======= main_visual ======    
 ==================================== */
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
     .main_visual {
         width: 100%;
         position: relative;
         overflow: hidden;
     }
 }
-.main_visual {height: 100vh;}
+.main_visual {height: 100vh;} */
 .main_visual img {
     width: 100%;
     height: 100%;
@@ -100,12 +97,9 @@ header ul li {
 /* ====================================
     ======= about ======    
 ==================================== */
-.about {
+/* .about {
     width: 100%;
     height: calc(var(--row) * 90);
     background-color: lightcyan;
-}
+} */
 
-@media (max-width: 1000px) {
-    .about {height: calc(var(--row) * 120);}
-}
