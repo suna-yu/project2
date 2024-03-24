@@ -1,11 +1,10 @@
 header {
     width: 100%; 
-    height: 50px;
+    height: 10rem;
     position: absolute;
     z-index: 999;
 }
 
-// main_visual
 @media screen and (min-width: 800px) {
     .main_visual {
         width: 100%;
@@ -15,32 +14,53 @@ header {
 }
 .main_visual {height: 100vh;}
 
-// about
 .about {
     width: 100%;
-    height: $row * 90;
+    height: $row * 70;
     @include responsive('mob') {
-        // height: $row * 120;
+        height: $row * 120;
     }
 }
 
-// global 
 .global {
     width: 100%;
     height: $row * 45;
-    background-color: lightcoral;
+    background-color: $second;
     @include responsive('mob') {
         // height: $row * 70;
-        background-color: coral;
+        background-color: $second;
     }
 }
 
-// vision
 .vision {
     width: 100%;
     height: $row * 45;
-    background-color: lightgreen;
-    @include responsive('mob') {
-        
-    }
+    // @include responsive('mob') {}
+}
+
+.brand {
+    width: 100%;
+    height: $row * 32;
+}
+
+.product {
+    width: 100%;
+    height: $row * 32;
+    background-color: $prime;
+}
+
+.news {
+    width: 100%;
+    height: $row * 55;
+}
+
+.recipe {
+    width: 100%;
+    height: $row * 26;
+    background-color: #f7f4f4;
+}
+
+.sns {
+    width: 100%;
+    height: $row * 62;
 }

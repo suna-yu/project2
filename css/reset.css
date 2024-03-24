@@ -40,9 +40,21 @@ table {
 html {
 	font-size: 62.5%;
 	line-height: 1.75;
-	font-family: 'NanumBarunGothic', sans-serif;
+	font-family: 'ottogi', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	text-decoration: none;
+	font-family: "ottogi", sans-serif;
+	font-size: 1.6rem;
+}
+
+body {
+	font-family: "ottogi", sans-serif;
+	font-weight: 400;
+	font-size: 1.6rem;
 }
 
 /* ====================================
@@ -85,17 +97,6 @@ html {
 	--unit2: calc(var(--unit) * var(--n2));
 	--unit1: calc(var(--unit) * var(--n1));
 }
-a {
-	text-decoration: none;
-	font-family: "ottogi", sans-serif;
-	font-size: 1.6rem;
-}
-
-body {
-	font-family: "ottogi", sans-serif;
-	font-weight: 400;
-	font-size: 1.6rem;
-}
 
 /* ====================================
     ======= global classes ======
@@ -103,33 +104,33 @@ body {
 
 .h1,
 h1 {
-	font-size: 4.9rem;
-	font-weight: 700;
+	font-size: 6.1rem;
+	font-weight: 500;
 }
 .h2,
 h2 {
-	font-size: 3.9rem;
-	font-weight: 700;
+	font-size: 4.9rem;
+	font-weight: 500;
 }
 .h3,
 h3 {
-	font-size: 3.1rem;
-	font-weight: 500;
+	font-size: 3.9rem;
+	font-weight: 400;
 }
 
 .h4,
 h4 {
-	font-size: 2.5rem;
-	font-weight: 500;
+	font-size: 3.1rem;
+	font-weight: 400;
 }
 .h5,
 h5 {
-	font-size: 2rem;
+	font-size: 2.5rem;
 	font-weight: 400;
 }
 .h6,
 h6 {
-	font-size: 1.6rem;
+	font-size: 2rem;
 	font-weight: 400;
 }
 .text {
@@ -141,7 +142,7 @@ h6 {
 	font-size: 1.6rem;
 	font-weight: 400;
 	text-decoration: underline;
-	color: var(--link);
+	color: var(--accent3);
 }
 .df {
 	display: flex;
