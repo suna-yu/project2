@@ -1,8 +1,8 @@
-// const pop = $('.popup');
-
-// $('.popup .close').on('click', function(){
-//     $(pop).hide(500);
-// });
+// 팝업메시지
+const pop = $('.popup');
+$('.popup .close').on('click', function(){
+    $(pop).hide(500);
+});
 
 // vision 
 $('.vision .item > div:eq(1)').css('flex-grow', '1');
@@ -15,3 +15,7 @@ $('.vision .item > div').mouseenter(function() {
         $(this).css('flex-grow', '1');
     }
 });
+
+
+// sns
+const sns = $('.sns .daily .cont')

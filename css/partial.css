@@ -144,14 +144,30 @@ header::before {
   z-index: -1;
 }
 
-nav {
-  padding: 0 5%;
+nav a {
+  display: block;
+  color: white;
+}
+nav h1 {
+  width: 20%;
+  position: relative;
+  z-index: 999;
+}
+nav h1 img {
+  position: absolute;
+  margin-top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5rem;
+  height: 5rem;
+  z-index: 999;
 }
 nav .dep1 {
   width: 100%;
   justify-content: space-between;
   transition: all 0.5s;
   z-index: 999;
+  margin: auto;
 }
 nav .dep1 > li {
   width: 10rem;
@@ -160,12 +176,21 @@ nav .dep1 > li > a {
   display: block;
   line-height: 10rem;
 }
+nav:hover a {
+  color: black;
+}
+nav:hover .w100 {
+  height: 30rem;
+}
+nav:hover .w101 {
+  display: block;
+}
+nav:hover .dep2 {
+  display: block;
+}
 nav .dep2 {
   line-height: 170%;
   display: none;
-}
-nav h1 a img {
-  margin-top: 2rem;
 }
 
 .w100 {
@@ -191,27 +216,27 @@ nav h1 a img {
   z-index: -1;
 }
 
-nav .dep1:hover a {
-  color: black;
+header .side {
+  width: 20%;
+  position: relative;
+  z-index: 999;
+  top: 4rem;
+  gap: 1rem;
 }
-nav .dep1:hover .w100 {
-  height: 30rem;
+header .side ul.depth2 {
+  line-height: var(--row);
+  display: none;
+  position: absolute;
+  top: 40px;
+  cursor: pointer;
+  z-index: 999;
 }
-nav .dep1:hover .w101 {
+header .side ul.depth2 li {
+  transition: all 0.3s;
+}
+header .side ul > li:hover .depth2 {
   display: block;
-}
-nav .dep1:hover .dep2 {
-  display: block;
-}
-
-header nav img {
-  width: 5rem;
-  height: 5rem;
-}
-
-header a {
-  display: block;
-  color: white;
+  margin-top: 2rem;
 }
 
 /* ====================================
