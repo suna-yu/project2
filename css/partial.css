@@ -729,6 +729,16 @@ header .side ul > li:hover .depth2 {
   margin-left: 2.5rem;
   overflow: hidden;
 }
+.sns .container .daily .icon {
+  display: flex;
+}
+.sns .container .daily .icon img {
+  transform: scale(1.2);
+}
+.sns .container .daily .icon h6 {
+  text-indent: 1rem;
+  line-height: 5rem;
+}
 .sns .container .daily a {
   display: block;
   padding: 3rem;
@@ -754,15 +764,7 @@ header .side ul > li:hover .depth2 {
 .sns .container .daily a .cont img:hover {
   transform: scale(1.2);
 }
-.sns .container .daily a h6 {
-  line-height: 5rem;
-}
-.sns .container .daily .icon {
-  display: flex;
-}
-.sns .container .daily .icon img {
-  transform: scale(1.2);
-}
-.sns .container .daily .icon h6 {
-  text-indent: 1rem;
+.sns .container .daily a .txt {
+  margin-top: 2rem;
+  height: 6rem;
 }/*# sourceMappingURL=partial.css.map */

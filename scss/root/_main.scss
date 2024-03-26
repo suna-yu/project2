@@ -362,7 +362,7 @@ header .side {
     ======= brand_story ======    
 ==================================== */
 .brand {
-    background: url(../../source/origin/brandStory.jpg) top center/cover no-repeat; 
+    background: url(../../source/origin/brandStory.jpg) top center / cover no-repeat; 
 }
 .brand .inner {
     position: relative;
@@ -602,6 +602,14 @@ header .side {
             margin-top: 5rem;
             margin-left: 2.5rem;
             overflow: hidden;
+            .icon {
+                display: flex;
+                img {transform: scale(1.2);}
+                h6 {
+                    text-indent: 1rem;
+                    line-height: 5rem;
+                }
+            }
             a {
                 display: block;
                 padding: 3rem;
@@ -625,12 +633,10 @@ header .side {
                         transform: scale(1.2);
                     }
                 }
-                h6 {line-height: 5rem;}
-            }
-            .icon {
-                display: flex;
-                img {transform: scale(1.2);}
-                h6 {text-indent: 1rem;}
+                .txt {
+                    margin-top: 2rem;
+                    height: 6rem;
+                }
             }
         }
     }
