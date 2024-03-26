@@ -481,7 +481,7 @@ header .side ul > li:hover .depth2 {
     ======= brand_story ======    
 ==================================== */
 .brand {
-  background: url(source/origin/brandStory.jpg) top center/cover no-repeat;
+  background: url(../../source/brandStory.jpg) top center/cover no-repeat;
 }
 
 .brand .inner {
