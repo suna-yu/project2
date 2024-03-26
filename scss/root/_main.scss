@@ -613,7 +613,6 @@ header .side {
                     border-radius: 1rem;
                     overflow: hidden;
                     margin-top: 2rem;
-
                     img {
                         position: absolute;
                         top: 0;
@@ -626,7 +625,7 @@ header .side {
                         transform: scale(1.2);
                     }
                 }
-                h6 {margin-top: 2rem;}
+                h6 {line-height: 5rem;}
             }
             .icon {
                 display: flex;
