@@ -82,7 +82,7 @@ nav {
     }
     .dep1 {
         // position: relative;
-        width: 100%;
+        width: 80%;
         justify-content: space-between;
         transition: all .5s;
         z-index: 999;
@@ -195,7 +195,7 @@ header .side {
             position: relative;
             object-fit: cover;
             @include responsive('mob') {
-                left: 0;
+                left: -1rem;
                 width: 80vw;
             }
         }
@@ -362,7 +362,7 @@ header .side {
     ======= brand_story ======    
 ==================================== */
 .brand {
-    background: url(../../source/brandStory.jpg) top center / cover no-repeat; 
+    background: url(../source/origin/brandStory.jpg) top center / cover no-repeat; 
 }
 .brand .inner {
     position: relative;

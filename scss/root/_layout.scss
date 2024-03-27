@@ -16,7 +16,7 @@ header {
 
 .about {
     width: 100%;
-    height: $row * 70;
+    height: $row * 80;
     @include responsive('mob') {
         height: $row * 120;
     }
