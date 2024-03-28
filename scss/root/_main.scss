@@ -48,6 +48,20 @@
     border-radius: 5px;
 }
 
+#top {
+    position: fixed;
+    width: 5rem;
+    height: 5rem;
+    background-color: white;
+    border-radius: 50%;
+    bottom: 10%;
+    right: 10%;
+    z-index: 9999;
+    text-align: center;
+    line-height: 5rem;
+    box-shadow: 5px 5px 10px;
+}
+
 /* ====================================
     ======= header = nav ======    
 ==================================== */
@@ -226,7 +240,7 @@ header .side {
             @include max-wh (30vw, 30vw, $unit * 4, $unit * 4);
             position: absolute;
             object-fit: cover;
-            right: $unit;
+            // right: $unit;
             clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
             @include responsive('mob') {
                 right: 0;  

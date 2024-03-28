@@ -1,0 +1,23 @@
+// 모바일 반응형 
+$mobile: 1000px;
+$tablet: 1200px;
+$breakpoint: (
+    'mob': (max-width: $mobile),
+    'tab': (max-width: $tablet),
+);
+
+@mixin responsive($mode) {
+    $query: map-get($breakpoint, $mode);
+    $max-width: map-get($query, max-width);
+    @media (max-width: #{$max-width}) {
+        @content;
+    }
+}
+
+// 너비높이
+@mixin max-wh($width, $height, $max-w, $max-h) {
+    width: $width;
+    height: $height;
+    max-width: $max-w;
+    max-height: $max-h;
+}
