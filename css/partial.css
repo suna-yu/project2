@@ -43,6 +43,11 @@ header {
   width: 100%;
   height: 126rem;
 }
+@media (max-width: 1000px) {
+  .vision {
+    height: 140rem;
+  }
+}
 
 .brand {
   width: 100%;
@@ -54,21 +59,41 @@ header {
   height: 89.6rem;
   background-color: #FFF300;
 }
+@media (max-width: 1000px) {
+  .product {
+    height: 140rem;
+  }
+}
 
 .news {
   width: 100%;
   height: 154rem;
 }
+@media (max-width: 1000px) {
+  .news {
+    height: 168rem;
+  }
+}
 
 .recipe {
   width: 100%;
-  height: 72.8rem;
+  height: 78.4rem;
   background-color: #f7f4f4;
+}
+@media (max-width: 1000px) {
+  .recipe {
+    height: 126rem;
+  }
 }
 
 .sns {
   width: 100%;
-  height: 173.6rem;
+  height: 168rem;
+}
+@media (max-width: 1000px) {
+  .sns {
+    height: 210rem;
+  }
 }
 
 /* 스킵메뉴 */
@@ -508,18 +533,28 @@ header .side ul > li:hover .depth2 {
 }
 @media (max-width: 1000px) {
   .brand .inner h2 {
-    font-size: 15rem;
+    font-size: 10rem;
   }
 }
 .brand .inner h3 {
   font-size: 12rem;
 }
+@media (max-width: 1000px) {
+  .brand .inner h3 {
+    font-size: 8rem;
+  }
+}
 .brand .inner .box {
-  width: 81rem;
+  width: 50%;
   position: absolute;
   display: flex;
   color: #FFF300;
   right: 0;
+}
+@media (max-width: 1000px) {
+  .brand .inner .box {
+    width: 88%;
+  }
 }
 .brand .inner .box > p {
   font-size: 5rem;
@@ -529,6 +564,12 @@ header .side ul > li:hover .depth2 {
   left: 15rem;
   text-align: right;
 }
+@media (max-width: 1000px) {
+  .brand .inner .box > p {
+    margin-left: 0;
+    padding-top: 2.5rem;
+  }
+}
 .brand .inner .box .line {
   height: 2px;
   width: 40rem;
@@ -537,11 +578,23 @@ header .side ul > li:hover .depth2 {
   bottom: 1.7rem;
   left: 39rem;
 }
+@media (max-width: 1000px) {
+  .brand .inner .box .line {
+    width: 35rem;
+    bottom: 12px;
+    left: 24.5rem;
+  }
+}
 .brand .inner > p {
   color: white;
   margin-top: 19.6rem;
   text-align: right;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 1000px) {
+  .brand .inner > p {
+    text-align: center;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -559,8 +612,18 @@ header .side ul > li:hover .depth2 {
   padding-top: 19.6rem;
 }
 
+@media (max-width: 1000px) {
+  .product .inner {
+    flex-direction: column;
+  }
+}
 .product .container {
   max-width: 620px;
+}
+@media (max-width: 1000px) {
+  .product .container {
+    width: 80%;
+  }
 }
 .product .textbox {
   text-align: right;
@@ -629,6 +692,12 @@ header .side ul > li:hover .depth2 {
   display: flex;
   overflow: hidden;
 }
+@media (max-width: 1000px) {
+  .news .container > .letter {
+    width: 45%;
+    padding-bottom: 45%;
+  }
+}
 .news .container > .letter > div {
   position: absolute;
   width: 100%;
@@ -675,12 +744,22 @@ header .side ul > li:hover .depth2 {
   padding-left: 2.5rem;
 }
 .recipe .container {
-  width: 100;
+  width: 100%;
+}
+@media (max-width: 1000px) {
+  .recipe .container {
+    flex-wrap: wrap;
+  }
 }
 .recipe .container .rcp {
   margin-top: 2.5rem;
   margin-left: 2.5rem;
   width: 22%;
+}
+@media (max-width: 1000px) {
+  .recipe .container .rcp {
+    width: 45%;
+  }
 }
 .recipe .container .rcp > div {
   position: relative;
@@ -741,6 +820,11 @@ header .side ul > li:hover .depth2 {
   margin-top: 5rem;
   margin-left: 2.5rem;
   overflow: hidden;
+}
+@media (max-width: 1000px) {
+  .sns .container .daily {
+    width: 45%;
+  }
 }
 .sns .container .daily .icon {
   display: flex;

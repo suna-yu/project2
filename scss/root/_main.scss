@@ -386,18 +386,24 @@ header .side {
         padding-top: $row * 11;
         color: white;
         @include responsive('mob') {
-            font-size: 15rem;
+            font-size: 10rem;
         }
     }
     h3 {
         font-size: 12rem;
+        @include responsive('mob') {
+            font-size: 8rem;
+        }
     }
     .box {
-        width: 81rem;
+        width: 50%;
         position: absolute;
         display: flex;
         color: $prime;
         right: 0;
+        @include responsive('mob') {
+            width: 88%;
+        }
         > p {
             font-size: 5rem;
             padding-top: 6rem;
@@ -405,6 +411,11 @@ header .side {
             position: relative;
             left: 15rem;
             text-align: right;
+            @include responsive('mob') {
+                margin-left: 0;
+                padding-top: 2.5rem;
+
+            }
         }
         .line {
             height: 2px;
@@ -413,6 +424,11 @@ header .side {
             position: absolute;
             bottom: 1.7rem;
             left: 39rem;
+            @include responsive('mob') {
+                width: 35rem;
+                bottom: 12px;
+                left: 24.5rem;
+            }
         }
     }
     > p {
@@ -420,6 +436,9 @@ header .side {
         margin-top: $row * 7;
         text-align: right;
         text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+        @include responsive('mob') {
+            text-align: center;
+        }
     }
 }
 @include responsive('mob') {
@@ -436,8 +455,16 @@ header .side {
     padding-top: $row * 7;
 }
 .product {
+    .inner {
+        @include responsive('mob') {
+            flex-direction: column;
+        }
+    }
     .container {
         max-width: $unit * 5;
+        @include responsive('mob') {
+            width: 80%;
+        }
     }
     .textbox {
         text-align: right;
@@ -505,6 +532,10 @@ header .side {
             text-align: center;
             display: flex;
             overflow: hidden;
+            @include responsive('mob') {
+                width: 45%;
+                padding-bottom: 45%;
+            }
             > div {
                 position: absolute;
                 width: 100%;
@@ -554,11 +585,17 @@ header .side {
         padding-left: 2.5rem;
     }
     .container {
-        width: 100;
+        width: 100%;
+        @include responsive('mob') {
+            flex-wrap: wrap;
+        }
         .rcp {
             margin-top: 2.5rem;
             margin-left: 2.5rem;
             width: 22%;
+            @include responsive('mob') {
+                width: 45%;
+            }
             > div {
                 position: relative;
                 width: 100%;
@@ -610,12 +647,15 @@ header .side {
         width: 100%;
         .daily {
             width: 30%;
-            height:  30%;
+            height: 30%;
             border: 1px solid gray;
             border-radius: 2rem;
             margin-top: 5rem;
             margin-left: 2.5rem;
             overflow: hidden;
+            @include responsive('mob') {
+                width: 45%;
+            }
             .icon {
                 display: flex;
                 img {transform: scale(1.2);}

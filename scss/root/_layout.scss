@@ -35,7 +35,9 @@ header {
 .vision {
     width: 100%;
     height: $row * 45;
-    // @include responsive('mob') {}
+    @include responsive('mob') {
+        height: $row * 50;
+    }
 }
 
 .brand {
@@ -47,20 +49,32 @@ header {
     width: 100%;
     height: $row * 32;
     background-color: $prime;
+    @include responsive('mob') {
+        height: $row * 50;
+    }
 }
 
 .news {
     width: 100%;
     height: $row * 55;
+    @include responsive('mob') {
+        height: $row * 60;
+    }
 }
 
 .recipe {
     width: 100%;
-    height: $row * 26;
+    height: $row * 28;
     background-color: #f7f4f4;
+    @include responsive('mob') {
+        height: $row * 45;
+    }
 }
 
 .sns {
     width: 100%;
-    height: $row * 62;
+    height: $row * 60;
+    @include responsive('mob') {
+        height: $row * 75;
+    }
 }
