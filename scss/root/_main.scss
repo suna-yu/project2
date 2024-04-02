@@ -31,7 +31,7 @@
     background-color: white;
     z-index: 999;
     left: 50%;
-    top: 50px;
+    top: 10rem;
     transform: translateX(-50%);
     box-shadow: 0 0 45px rgba(0,0,0,0.4);
     user-select: none;
@@ -52,7 +52,7 @@
     position: fixed;
     width: 5rem;
     height: 5rem;
-    background-color: white;
+    background-color: $prime;
     border-radius: 50%;
     bottom: 10%;
     right: 10%;
@@ -60,6 +60,10 @@
     text-align: center;
     line-height: 5rem;
     box-shadow: 5px 5px 10px;
+    a {
+        display: block;
+        color: #000;
+    }
 }
 
 /* ====================================
@@ -79,11 +83,14 @@ header::before {
 }
 nav {
     a {display: block; color: white;}
+    @include responsive('mob') {
+        justify-content: space-between;
+    }
 
     h1 {
         width: 20%;
         position: relative;
-        z-index: 999;
+        z-index: 9999999;
         img {
             position: absolute;
             margin-top: 2rem;
@@ -107,6 +114,10 @@ nav {
         > li > a {
             display: block;
             line-height: 10rem;
+            // text-align: center;
+        }
+        @include responsive('mob') {
+            display: none;
         }
     }
     &:hover {
@@ -120,7 +131,9 @@ nav {
         line-height: 170%;
         display: none;
     }
-
+    @include responsive('mob') {
+        &:hover a {color: white;}
+    }
 }
 .w100 {
     position: absolute;
@@ -144,12 +157,14 @@ nav {
     z-index: -1;
 }
 
-header .side {
-    width: 20%;
+header nav .side {
+    width: 30%;
     position: relative;
     z-index: 999;
     top: 4rem;
-    gap: 1rem;
+    > ul {
+        justify-content: space-around;
+    }
     ul.depth2 {
         line-height: var(--row);
         display: none;
@@ -158,28 +173,135 @@ header .side {
         cursor: pointer;
         z-index: 999;
         li {transition: all 0.3s;}
+    }  
+    .map {
+        a {
+            width: 3rem;
+            height: 3rem;
+            display: block;
+            .fa-solid {
+                position: absolute;
+                font-size: 3rem;
+                top: -5px;
+                transition: all 0.3s;
+            }
+        }
     }
-    ul > li:hover .depth2 {
-        display: block;
-        margin-top: 2rem;
-    }    
+    
+}
+.side:hover {
+    .map a .fa-solid {transform: scale(1.1);}
 }
 
+// 메인비주얼 - 햄버거 메뉴
+.sitemap {
+    display: none;
+    background-color: $prime;
+    a {color: #000;}
+    a:hover {
+        color: $accent1;
+    }
+    .ham_dep1 {
+        position: absolute;
+        top: 50vh;
+        left: 50vw;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        > li > a {
+            width: 20rem;
+            height: 5rem;
+            line-height: 5rem;
+        }
+        li a {
+            display: block;
+            font-size: 2.5rem;
+        }
+    }
+    .ham_dep2 {
+        display: none;
+        line-height: 1.5;
+        // background-color: #ccc;
+        height: 0;
+        li a {font-size: 2rem;}
+        transition: all 0.3s;
+        height: 100%;
+        padding: 1rem;
+    }
+    .ham_dep2.on {
+        height: 100%; 
+        display: block;
+        background: rgba(255, 255, 255, 0.5);
+    }
+}
+.sitemap.on {display: block;}
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999999999;
+    a {color: black;}
+}
 
 /* ====================================
     ======= main_visual ======    
 ==================================== */
-.main_visual img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
+.main_visual {
+    position: relative;
+    .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        position: absolute;
+    }
+    .swiper-slide {
+        background: #ccc;
+    }
+    .page {
+        position: absolute;
+        top: 50% !important;
+        left: 50% !important;
+        z-index: 9999;
+    }
+    .next, .prev {
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        z-index: 999999;
+    }
+    .swiper-pagination {
+        margin-bottom: 1rem;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        width: 6rem;
+        height: 6rem;
+        background-color: white;
+        border-radius: 50%;
+        opacity: 0.5;
+        transition: 0.3s;
+    }
+    .swiper-button-next:hover, .swiper-button-prev:hover {opacity: 1;}
+    .txt {
+        position: absolute;
+        color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3.1rem;
+        line-height: 1.5;
+        text-shadow: black 5px 5px 10px;
+    }
 }
+
 
 /* ====================================
     ======= about ======    
 ==================================== */
 .about {
+    .inner {
+        overflow: hidden;
+        height: 100%;
+    }
     .inner > h2 {
         margin-top: $row * 9;
         text-align: center;
@@ -269,7 +391,7 @@ header .side {
             top: 30%; 
             transform: translateY(-50%);
             @include responsive('mob') {
-                margin-top: $row * 7;
+                margin-top: $row * 6;
                 top: 50%;
             }
         }
@@ -396,25 +518,24 @@ header .side {
         }
     }
     .box {
-        width: 50%;
+        width: 80rem;
         position: absolute;
         display: flex;
         color: $prime;
         right: 0;
         @include responsive('mob') {
-            width: 88%;
+            width: 61rem;
         }
         > p {
             font-size: 5rem;
             padding-top: 6rem;
-            margin-left: 5rem;
             position: relative;
-            left: 15rem;
             text-align: right;
+            padding-left: 20rem;
             @include responsive('mob') {
-                margin-left: 0;
-                padding-top: 2.5rem;
-
+                padding-left: 18rem;
+                padding-top: 3.3rem;
+                font-size: 3.9rem;
             }
         }
         .line {
@@ -448,59 +569,63 @@ header .side {
 /* ====================================
     ======= product ======    
 ==================================== */
-.product .inner {
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5px;
-    padding-top: $row * 7;
-}
 .product {
-    .inner {
+    .unit {
+        width: 100%;
+        padding: 1rem;
+        align-items: center;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(40%);
+        opacity: 0;
+        transition: opacity 0.3s;
         @include responsive('mob') {
             flex-direction: column;
         }
-    }
-    .container {
-        max-width: $unit * 5;
-        @include responsive('mob') {
-            width: 80%;
-        }
-    }
-    .textbox {
-        text-align: right;
-        h2 {
-            font-size: 6.1rem;
-            font-weight: 400;
-            letter-spacing: 5px;
-            line-height: 1.5;
-        }
-        .category {
-            font-size: 2.5rem;
-            position: relative;
-            > div {
-                position: absolute;
-                top: 2rem;
-                right: 0;
-                // width: 20rem;
-                padding: 1rem;
-                background-color: rgba(0, 0, 0, 0.2);
-                border-radius: 2rem;
-                text-align: center;
+        .container {
+            max-width: $unit * 5;
+            @media (max-width: 1150px) {
+                width: 80%;
             }
         }
-        h4 {
-            padding-top: $row * 4;
-            font-size: 4.9rem;
-            font-weight: 300;
-        }
-        p a {
-            display: block;
-            font-size: 2rem;
-            line-height: $row * 3;
-            img {transform: scale(1.5);}
-            color: black;
+        .textbox {
+            text-align: right;
+            line-height: 1.5;
+            h2 {
+                font-size: 6.1rem;
+                font-weight: 400;
+                letter-spacing: 5px;
+            }
+            .category {
+                font-size: 2.5rem;
+                position: relative;
+                > div {
+                    position: absolute;
+                    top: 2rem;
+                    right: 0;
+                    padding: 1rem;
+                    background-color: rgba(0, 0, 0, 0.2);
+                    border-radius: 2rem;
+                    text-align: center;
+                    color: white;
+                }
+            }
+            h4 {
+                padding-top: $row * 4;
+                font-size: 4.9rem;
+                font-weight: 300;
+            }
+            p a {
+                display: block;
+                font-size: 2rem;
+                line-height: $row * 3;
+                img {transform: scale(1.5);}
+                color: black;
+            }
         }
     }
+    .unit.on {opacity: 1;}
 }
 
 /* ====================================
@@ -611,6 +736,9 @@ header .side {
                     object-fit: cover;
                     transition: all 0.3s;
                 }
+                img:hover {
+                    transform: scale(1.1);
+                }
             }
             h5 {margin-top: $row;}
             h6 {
@@ -684,7 +812,7 @@ header .side {
                         transition: all 0.3s;
                     }
                     img:hover {
-                        transform: scale(1.2);
+                        transform: scale(1.1);
                     }
                 }
                 .txt {
@@ -694,4 +822,12 @@ header .side {
             }
         }
     }
+}
+
+/* ====================================
+    ======= footer ======    
+==================================== */
+footer img {
+    width: 100%;
+    height: 100%;
 }

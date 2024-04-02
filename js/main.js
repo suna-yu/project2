@@ -1,11 +1,53 @@
 // 팝업메시지
 const pop = $('.popup');
 $('.popup .close').on('click', function(){
-    $(pop).hide(500);
+    $(pop).hide();
 });
 
+// top
+$('#top').on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, 'smooth');
+});
+
+// nav 
+$('nav .side ul li:nth-of-type(2)').on('click', function(){
+    $('nav .side .depth2').toggle();
+});
+$('.ham_dep1 > li > a').click(function(e) {
+    e.preventDefault();
+    $(this).next('.ham_dep2').slideToggle('smooth');
+    $('.ham_dep1 .ham_dep2').not($(this).next('.ham_dep2')).slideUp('smooth');
+});
+$('nav .side .map').on('click', () => {
+    $('.sitemap').toggleClass('on');
+    $('nav').toggleClass('fixed-nav')
+})
+
+
+
+// main_visual 슬라이드
+const banner = new Swiper(".swiper", {
+    effect: "fade",
+    loop: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+      },
+    scrollbar: {
+        el: '.swiper-scrollbar'
+    },
+    autoplay: {
+        delay: '5000'
+    }
+})
+
+
 // about 
-// le1 클래스를 가진 요소들에 대한 애니메이션
 gsap.utils.toArray('.le1').forEach(item => {
     gsap.from(item, {
       x: -200, 
@@ -19,8 +61,7 @@ gsap.utils.toArray('.le1').forEach(item => {
     });
   });
 
-  // ri2 클래스를 가진 요소들에 대한 애니메이션
-  gsap.utils.toArray('.ri2').forEach(item => {
+gsap.utils.toArray('.ri2').forEach(item => {
     gsap.from(item, {
       x: 200, 
       autoAlpha: 0, 
@@ -32,8 +73,6 @@ gsap.utils.toArray('.le1').forEach(item => {
       }
     });
   });
-
-  // le2 클래스를 가진 요소들에 대한 애니메이션 설정
 gsap.utils.toArray('.le2').forEach((item) => {
 	gsap.from(item, {
 		x: 200, // 오른쪽에서 시작
@@ -46,8 +85,6 @@ gsap.utils.toArray('.le2').forEach((item) => {
 		},
 	});
 });
-/* 수정 */
-// ri3 클래스를 가진 요소들에 대한 애니메이션 설정
 gsap.from('.ri3', {
 	x: -200, // 왼쪽에서 시작
 	autoAlpha: 0, // 시작 시 투명하게
@@ -63,7 +100,7 @@ gsap.to('.poly2', {
 	autoAlpha: 1, // 시작 시 투명하게
 	duration: 1, // 지속 시간 1초
 	scrollTrigger: {
-		trigger: 'item2',
+		trigger: $('.about .item2'),
 		start: 'top bottom', // 뷰포트의 아래쪽에서 시작
 		toggleActions: 'play none none none',
 	},
@@ -83,5 +120,20 @@ $('.vision .item > div').mouseenter(function() {
 });
 
 
-// sns
-const sns = $('.sns .daily .cont')
+// product
+const product = $('.product .unit');
+let idx2 = 0;
+
+function slide2() { 
+    product.removeClass('on'); 
+    product.eq(idx2).addClass('on');
+    idx2++; 
+    if (idx2 >= product.length) {
+        idx2 = 0; 
+    };
+}
+slide2();
+
+setInterval (() => {
+    slide2() 
+}, 5000);

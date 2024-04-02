@@ -7,24 +7,27 @@ header {
   z-index: 999;
 }
 
-@media screen and (min-width: 800px) {
-  .main_visual {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-  }
+.sitemap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 99999;
 }
+
 .main_visual {
+  width: 100%;
   height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .about {
   width: 100%;
-  height: 224rem;
+  height: 238rem;
 }
 @media (max-width: 1000px) {
   .about {
-    height: 336rem;
+    height: 350rem;
   }
 }
 
@@ -82,7 +85,7 @@ header {
 }
 @media (max-width: 1000px) {
   .recipe {
-    height: 126rem;
+    height: 131.6rem;
   }
 }
 
@@ -92,8 +95,13 @@ header {
 }
 @media (max-width: 1000px) {
   .sns {
-    height: 210rem;
+    height: 218.4rem;
   }
+}
+
+footer {
+  width: 100%;
+  height: 28rem;
 }
 
 /* 스킵메뉴 */
@@ -133,7 +141,7 @@ header {
   background-color: white;
   z-index: 999;
   left: 50%;
-  top: 50px;
+  top: 10rem;
   transform: translateX(-50%);
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.4);
   -webkit-user-select: none;
@@ -157,7 +165,7 @@ header {
   position: fixed;
   width: 5rem;
   height: 5rem;
-  background-color: white;
+  background-color: #FFF300;
   border-radius: 50%;
   bottom: 10%;
   right: 10%;
@@ -165,6 +173,10 @@ header {
   text-align: center;
   line-height: 5rem;
   box-shadow: 5px 5px 10px;
+}
+#top a {
+  display: block;
+  color: #000;
 }
 
 /* ====================================
@@ -187,10 +199,15 @@ nav a {
   display: block;
   color: white;
 }
+@media (max-width: 1000px) {
+  nav {
+    justify-content: space-between;
+  }
+}
 nav h1 {
   width: 20%;
   position: relative;
-  z-index: 999;
+  z-index: 9999999;
 }
 nav h1 img {
   position: absolute;
@@ -215,6 +232,11 @@ nav .dep1 > li > a {
   display: block;
   line-height: 10rem;
 }
+@media (max-width: 1000px) {
+  nav .dep1 {
+    display: none;
+  }
+}
 nav:hover a {
   color: black;
 }
@@ -230,6 +252,11 @@ nav:hover .dep2 {
 nav .dep2 {
   line-height: 170%;
   display: none;
+}
+@media (max-width: 1000px) {
+  nav:hover a {
+    color: white;
+  }
 }
 
 .w100 {
@@ -255,14 +282,16 @@ nav .dep2 {
   z-index: -1;
 }
 
-header .side {
-  width: 20%;
+header nav .side {
+  width: 30%;
   position: relative;
   z-index: 999;
   top: 4rem;
-  gap: 1rem;
 }
-header .side ul.depth2 {
+header nav .side > ul {
+  justify-content: space-around;
+}
+header nav .side ul.depth2 {
   line-height: var(--row);
   display: none;
   position: absolute;
@@ -270,29 +299,144 @@ header .side ul.depth2 {
   cursor: pointer;
   z-index: 999;
 }
-header .side ul.depth2 li {
+header nav .side ul.depth2 li {
   transition: all 0.3s;
 }
-header .side ul > li:hover .depth2 {
+header nav .side .map a {
+  width: 3rem;
+  height: 3rem;
   display: block;
-  margin-top: 2rem;
+}
+header nav .side .map a .fa-solid {
+  position: absolute;
+  font-size: 3rem;
+  top: -5px;
+  transition: all 0.3s;
+}
+
+.side:hover .map a .fa-solid {
+  transform: scale(1.1);
+}
+
+.sitemap {
+  display: none;
+  background-color: #FFF300;
+}
+.sitemap a {
+  color: #000;
+}
+.sitemap a:hover {
+  color: #D4243B;
+}
+.sitemap .ham_dep1 {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.sitemap .ham_dep1 > li > a {
+  width: 20rem;
+  height: 5rem;
+  line-height: 5rem;
+}
+.sitemap .ham_dep1 li a {
+  display: block;
+  font-size: 2.5rem;
+}
+.sitemap .ham_dep2 {
+  display: none;
+  line-height: 1.5;
+  height: 0;
+  transition: all 0.3s;
+  height: 100%;
+  padding: 1rem;
+}
+.sitemap .ham_dep2 li a {
+  font-size: 2rem;
+}
+.sitemap .ham_dep2.on {
+  height: 100%;
+  display: block;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.sitemap.on {
+  display: block;
+}
+
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999999999;
+}
+.fixed-nav a {
+  color: black;
 }
 
 /* ====================================
     ======= main_visual ======    
 ==================================== */
-.main_visual img {
+.main_visual {
+  position: relative;
+}
+.main_visual .swiper-slide img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: top center;
      object-position: top center;
+  position: absolute;
+}
+.main_visual .swiper-slide {
+  background: #ccc;
+}
+.main_visual .page {
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  z-index: 9999;
+}
+.main_visual .next, .main_visual .prev {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  z-index: 999999;
+}
+.main_visual .swiper-pagination {
+  margin-bottom: 1rem;
+}
+.main_visual .swiper-button-next, .main_visual .swiper-button-prev {
+  width: 6rem;
+  height: 6rem;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.main_visual .swiper-button-next:hover, .main_visual .swiper-button-prev:hover {
+  opacity: 1;
+}
+.main_visual .txt {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.1rem;
+  line-height: 1.5;
+  text-shadow: black 5px 5px 10px;
 }
 
 /* ====================================
     ======= about ======    
 ==================================== */
+.about .inner {
+  overflow: hidden;
+  height: 100%;
+}
 .about .inner > h2 {
   margin-top: 25.2rem;
   text-align: center;
@@ -408,7 +552,7 @@ header .side ul > li:hover .depth2 {
 }
 @media (max-width: 1000px) {
   .about .item3 .box {
-    margin-top: 19.6rem;
+    margin-top: 16.8rem;
     top: 50%;
   }
 }
@@ -545,7 +689,7 @@ header .side ul > li:hover .depth2 {
   }
 }
 .brand .inner .box {
-  width: 50%;
+  width: 80rem;
   position: absolute;
   display: flex;
   color: #FFF300;
@@ -553,21 +697,21 @@ header .side ul > li:hover .depth2 {
 }
 @media (max-width: 1000px) {
   .brand .inner .box {
-    width: 88%;
+    width: 61rem;
   }
 }
 .brand .inner .box > p {
   font-size: 5rem;
   padding-top: 6rem;
-  margin-left: 5rem;
   position: relative;
-  left: 15rem;
   text-align: right;
+  padding-left: 20rem;
 }
 @media (max-width: 1000px) {
   .brand .inner .box > p {
-    margin-left: 0;
-    padding-top: 2.5rem;
+    padding-left: 18rem;
+    padding-top: 3.3rem;
+    font-size: 3.9rem;
   }
 }
 .brand .inner .box .line {
@@ -605,40 +749,44 @@ header .side ul > li:hover .depth2 {
 /* ====================================
     ======= product ======    
 ==================================== */
-.product .inner {
-  justify-content: space-between;
+.product .unit {
+  width: 100%;
+  padding: 1rem;
   align-items: center;
-  padding: 0 5px;
-  padding-top: 19.6rem;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(40%);
+  opacity: 0;
+  transition: opacity 0.3s;
 }
-
 @media (max-width: 1000px) {
-  .product .inner {
+  .product .unit {
     flex-direction: column;
   }
 }
-.product .container {
+.product .unit .container {
   max-width: 620px;
 }
-@media (max-width: 1000px) {
-  .product .container {
+@media (max-width: 1150px) {
+  .product .unit .container {
     width: 80%;
   }
 }
-.product .textbox {
+.product .unit .textbox {
   text-align: right;
+  line-height: 1.5;
 }
-.product .textbox h2 {
+.product .unit .textbox h2 {
   font-size: 6.1rem;
   font-weight: 400;
   letter-spacing: 5px;
-  line-height: 1.5;
 }
-.product .textbox .category {
+.product .unit .textbox .category {
   font-size: 2.5rem;
   position: relative;
 }
-.product .textbox .category > div {
+.product .unit .textbox .category > div {
   position: absolute;
   top: 2rem;
   right: 0;
@@ -646,20 +794,24 @@ header .side ul > li:hover .depth2 {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 2rem;
   text-align: center;
+  color: white;
 }
-.product .textbox h4 {
+.product .unit .textbox h4 {
   padding-top: 11.2rem;
   font-size: 4.9rem;
   font-weight: 300;
 }
-.product .textbox p a {
+.product .unit .textbox p a {
   display: block;
   font-size: 2rem;
   line-height: 8.4rem;
   color: black;
 }
-.product .textbox p a img {
+.product .unit .textbox p a img {
   transform: scale(1.5);
+}
+.product .unit.on {
+  opacity: 1;
 }
 
 /* ====================================
@@ -778,6 +930,9 @@ header .side ul > li:hover .depth2 {
      object-fit: cover;
   transition: all 0.3s;
 }
+.recipe .container .rcp > div img:hover {
+  transform: scale(1.1);
+}
 .recipe .container .rcp h5 {
   margin-top: 2.8rem;
 }
@@ -859,9 +1014,17 @@ header .side ul > li:hover .depth2 {
   transition: all 0.3s;
 }
 .sns .container .daily a .cont img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .sns .container .daily a .txt {
   margin-top: 2rem;
   height: 6rem;
+}
+
+/* ====================================
+    ======= footer ======    
+==================================== */
+footer img {
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=partial.css.map */

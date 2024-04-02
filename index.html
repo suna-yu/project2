@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>오뚜기</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/partial.css">
+    <link rel="shortcut icon" href="./source/origin/ottogi_logo.png">
 </head>
 <body>
     <div class="skip_menu">
@@ -90,11 +95,12 @@
                             <li><a href="#">소비자중심경영</a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><i class="fa-solid fa-bars"></i>
-                    </a></li>
                 </ul>
-                <div class="side df">
-                    <ul class="pr">
+                <div class="side">
+                    <ul class="pr df">
+                        <li class="map">
+                            <a href="#" class="on"><i class="fa-solid fa-bars"></i></a>
+                        </li>
                         <li><a href="#">한국어⮟</a>
                             <ul class="depth2">
                                 <li><a href="#">한국어</a></li>
@@ -102,16 +108,99 @@
                                 <li><a href="#">日本語</a></li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="#"><img src="./source/icon/gnb_search.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./source/icon/gnb_chatbot.svg" alt=""></a>
+                        </li>
                     </ul>
-                    <div><a href="#"><img src="./source/icon/gnb_search.svg" alt=""></a></div>
-                    <div><a href="#"><img src="./source/icon/gnb_chatbot.svg" alt=""></a></div>
                 </div>
             </nav>
+            <div class="sitemap">
+                <ul class="ham_dep1">
+                    <li><a href="#">회사소개</a>
+                        <ul class="ham_dep2">
+                            <li><a href="#">Overview</a></li>
+                            <li><a href="#">오뚜기 소개</a></li>
+                            <li><a href="#">글로벌 오뚜기</a></li>
+                            <li><a href="#">오시는 길</a></li>
+                            <li><a href="#">인재채용</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">ESG경영</a>
+                        <ul class="ham_dep2">
+                            <li><a href="#">Overview</a></li>
+                            <li><a href="#">ESG경영 소개</a></li>
+                            <li><a href="#">환경</a></li>
+                            <li><a href="#">사회</a></li>
+                            <li><a href="#">사회공헌</a></li>
+                            <li><a href="#">동반성장</a></li>
+                            <li><a href="#">보고서 및 정책</a></li>
+                            <li><a href="#">ESG Data</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">제품이야기</a>
+                        <ul class="ham_dep2">
+                            <li><a href="#">브랜드 스토리</a></li>
+                            <li><a href="#">제품정보</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">브랜드 경험</a>
+                        <ul class="ham_dep2">
+                            <li><a href="#">Overview</a></li>
+                            <li><a href="#">공식캐릭터</a></li>
+                            <li><a href="#">브랜드공간</a></li>
+                            <li><a href="#">공장견학</a></li>
+                            <li><a href="#">공모전</a></li>
+                            <li><a href="#">페스티벌</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">홍보센터</a>
+                        <ul class="ham_dep2">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">오뚜기 뉴스룸</a></li>
+                            <li><a href="#">언론보도</a></li>
+                            <li><a href="#">CF스토리</a></li>
+                            <li><a href="#">칼럼</a></li>
+                            <li><a href="#">투자정보</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">고객서비스</a>
+                        <ul class="ham_dep2">
+                            <li><a href="#">고객상담 프로세스</a></li>
+                            <li><a href="#">고객의 소리</a></li>
+                            <li><a href="#">자주묻는 질문</a></li>
+                            <li><a href="#">고객만족활동</a></li>
+                            <li><a href="#">소비자중심경영</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
     <main>
-        <div class="main_visual">
-            <img src="./source/origin/main_visual1.jpg" alt="1">
+        <div class="main_visual swiper">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <img src="./source/origin/main_visual1.jpg" alt="1">
+                    <div class="txt">맛과 품질을 가장 소중히 <br>생각하고 행동합니다.</div>
+                </li>
+                <li class="swiper-slide">
+                    <img src="./source/origin/main_visual2.jpg" alt="2">
+                    <div class="txt">소비자가 필요로 <br>소비자에게 편리한 제품을 <br>만들어갑니다.</div>
+                </li>
+                <li class="swiper-slide">
+                    <img src="./source/origin/main_visual3.jpg" alt="3">
+                </li>
+              </ul>
+              <!-- pager -->
+              <div class="swiper-pagination"></div>
+              <!-- control -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-scrollbar"></div>
         </div>
         <div class="about">
             <div class="inner">
@@ -227,22 +316,62 @@
             </div>
         </div>
         <div class="product">
-            <div class="inner df">
-                <div class="container">
-                    <img src="./source/origin/product1.png" alt="1">
-                </div>
-                <div class="textbox">
-                    <h2>맛있는 생활의<br>오뚜기 제품</h2>
-                    <div class="category">
-                        <div>케찹마요/드레싱</div>
+            <div class="inner pr">
+                <div class="unit unit1 on">
+                    <div class="container">
+                        <img src="./source/origin/product1.png" alt="1">
                     </div>
-                    <h4>대한민국 냉장고 필수템</h4>
-                    <p><a href="#">오뚜기몰에서 상품보기<span><img src="./source/icon/ico_arrow.svg" alt=""></span>
-                    </a></p>
-                    <div class="btn">
-                        <div class="left"></div>
-                        <div><span>1</span>/ 6</div>
-                        <div class="right"></div>
+                    <div class="textbox">
+                        <h2>맛있는 생활의<br>오뚜기 제품</h2>
+                        <div class="category">
+                            <div>봉지라면</div>
+                        </div>
+                        <h4>언제 어디서나 맛있는!<br>오뚜기 라면</h4>
+                        <p><a href="#">오뚜기몰에서 상품보기<span><img src="./source/icon/ico_arrow.svg" alt=""></span>
+                        </a></p>
+                        <div class="btn">
+                            <div class="left"></div>
+                            <div><span>1</span>/ 6</div>
+                            <div class="right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="unit unit2">
+                    <div class="container">
+                        <img src="./source/origin/product2.png" alt="1">
+                    </div>
+                    <div class="textbox">
+                        <h2>맛있는 생활의<br>오뚜기 제품</h2>
+                        <div class="category">
+                            <div>케찹마요/드레싱</div>
+                        </div>
+                        <h4>대한민국 냉장고 필수템</h4>
+                        <p><a href="#">오뚜기몰에서 상품보기<span><img src="./source/icon/ico_arrow.svg" alt=""></span>
+                        </a></p>
+                        <div class="btn">
+                            <div class="left"></div>
+                            <div><span>2</span>/ 6</div>
+                            <div class="right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="unit unit3">
+                    <div class="container">
+                        <img src="./source/origin/product3.png" alt="1">
+                    </div>
+                    <div class="textbox">
+                        <h2>맛있는 생활의<br>오뚜기 제품</h2>
+                        <div class="category">
+                            <div>탕국찌개</div>
+                        </div>
+                        <h4>진하고 깊은 국물요리의 명가</h4>
+                        <p><a href="#">오뚜기몰에서 상품보기<span><img src="./source/icon/ico_arrow.svg" alt=""></span>
+                        </a></p>
+                        <div class="btn">
+                            <div class="left"></div>
+                            <div><span>3</span>/ 6</div>
+                            <div class="right"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -377,11 +506,14 @@
             </div>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="inner"><img src="./source/origin/footer.JPG" alt="footer"></div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>
