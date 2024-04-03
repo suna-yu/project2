@@ -756,6 +756,7 @@ header nav .side .map a .fa-solid {
   position: absolute;
   display: flex;
   justify-content: space-between;
+  top: 50%;
   transform: translateY(40%);
   opacity: 0;
   transition: opacity 0.3s;
@@ -763,6 +764,7 @@ header nav .side .map a .fa-solid {
 @media (max-width: 1000px) {
   .product .unit {
     flex-direction: column;
+    transform: translateY(10%);
   }
 }
 .product .unit .container {
@@ -772,6 +774,9 @@ header nav .side .map a .fa-solid {
   .product .unit .container {
     width: 80%;
   }
+}
+.product .unit .container img {
+  width: 100%;
 }
 .product .unit .textbox {
   text-align: right;

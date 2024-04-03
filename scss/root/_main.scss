@@ -577,17 +577,20 @@ header nav .side {
         position: absolute;
         display: flex;
         justify-content: space-between;
+        top: 50%;
         transform: translateY(40%);
         opacity: 0;
         transition: opacity 0.3s;
         @include responsive('mob') {
             flex-direction: column;
+            transform: translateY(10%);
         }
         .container {
             max-width: $unit * 5;
             @media (max-width: 1150px) {
                 width: 80%;
             }
+            img {width: 100%;}
         }
         .textbox {
             text-align: right;
